@@ -124,7 +124,9 @@ class ViewController: UIViewController {
         }
         
         operation.completionBlock = {
-            self.searchButton?.isEnabled = true
+            DispatchQueue.main.async {
+                self.searchButton?.isEnabled = true
+            }
         }
         
         OperationQueue.main.addOperation(operation)
